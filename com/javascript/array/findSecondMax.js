@@ -10,11 +10,13 @@ for(let i = 0; i<nums.length; i++) {
     if(nums[i]>max) {
         prevMax=max;
         max=nums[i];
+    } else if(nums[i]>prevMax) { //num[i] is not greater than max but grater than prevMax means ==> prevMax < num[i]  < max 
+        prevMax=nums[i];
     }
 }
 return prevMax;
 }
 
-const arr = [4, 2, 7, 4, 8, 1, 12];
+const arr = [4, 2, 7, 4, 8, 1, 12, 11];
 const secondMax = findSecondMax(arr);
 console.log('secondMax', secondMax);
